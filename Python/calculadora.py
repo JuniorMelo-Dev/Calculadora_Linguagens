@@ -37,9 +37,18 @@ def entrar_valores(evento):
     texto.set(todos_valores)
 
 
+def calcular():
+    global todos_valores
 
+    resultado = str(eval(todos_valores))
+    texto.set(resultado)
 
-
+    todos_valores = ' '
+     
+def limpar_tela():
+    global todos_valores
+    todos_valores = ' '
+    texto.set("")
 
 
 #Configurando o frame_tela
@@ -75,7 +84,7 @@ botao3 = Button(frame_cientifica, command = lambda: entrar_valores(')'), text = 
 botao3.place(x=177, y=58)
 
 #Frame_corpo
-botao0 = Button(frame_corpo, command = lambda: entrar_valores('C'), text = 'C', width = 14, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
+botao0 = Button(frame_corpo, command = limpar_tela, text = 'C', width = 14, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
 botao0.place(x=0, y=0)
 botao1 = Button(frame_corpo, command = lambda: entrar_valores('%'), text = '%', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
 botao1.place(x=118, y=0)
@@ -88,7 +97,7 @@ botao1 = Button(frame_corpo, command = lambda: entrar_valores('8'), text = '8', 
 botao1.place(x=59, y=29)
 botao2 = Button(frame_corpo, command = lambda: entrar_valores('9'), text = '9', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor1, fg = cor2)
 botao2.place(x=118, y=29)
-botao3 = Button(frame_corpo, command = lambda: entrar_valores('x'), text = 'x', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
+botao3 = Button(frame_corpo, command = lambda: entrar_valores('*'), text = '*', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
 botao3.place(x=177, y=29)
 
 botao0 = Button(frame_corpo, command = lambda: entrar_valores('4'), text = '4', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor1, fg = cor2)
@@ -113,7 +122,7 @@ botao0 = Button(frame_corpo, command = lambda: entrar_valores('0'), text = '0', 
 botao0.place(x=0, y=116)
 botao1 = Button(frame_corpo, command = lambda: entrar_valores('.'), text = '.', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor1, fg = cor2)
 botao1.place(x=118, y=116)
-botao2 = Button(frame_corpo, command = lambda: entrar_valores('='), text = '=', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
+botao2 = Button(frame_corpo, command = calcular, text = '=', width = 6, height = 1, relief=RAISED, overrelief=RIDGE, font = ('Ivy 10 bold'), bg = cor3, fg = cor2)
 botao2.place(x=177, y=116)
 
 janela.mainloop()
