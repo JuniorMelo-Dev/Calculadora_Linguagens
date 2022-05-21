@@ -31,7 +31,6 @@ int main(void){
                 printf("\n Digite uma opcao valida! \n ");
                 break;
         }
-        //printf("\n\t O resultado foi: %0.2f", resultado);
         printf("\n Digite 1 para continuar: ");
         scanf("%i", &op);
     } while(op == 1);
