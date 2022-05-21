@@ -13,21 +13,25 @@ int main(void){
         switch(op){
             case 1:
                 resultado = x + y;
+                printf("A soma entre os numeros foi: %0.2f", resultado);
                 break;
             case 2:
                 resultado = x - y;
+                printf("A subtracao entre os numeros foi: %0.2f", resultado);
                 break;
             case 3:
                 resultado = x * y;
+                printf("A multiplicacao entre os numeros foi: %0.2f", resultado);
                 break;
             case 4:
                 resultado = x / y;
+                printf("A divisao entre os numeros foi: %0.2f", resultado);
                 break;
             default:
                 printf("\n Digite uma opcao valida! \n ");
                 break;
         }
-        printf("\n\t O resultado foi: %0.2f", resultado);
+        //printf("\n\t O resultado foi: %0.2f", resultado);
         printf("\n Digite 1 para continuar: ");
         scanf("%i", &op);
     } while(op == 1);
